@@ -29,16 +29,23 @@ def get_news(category):
 def process_results(movie_list):
     # '''
     # Function  that processes the movie result and transform them to a list of Objects
-    # ...
-    Args:
-        news_list = A list of news items with descriptions
-        
-    Returns:
+    
+    # Args:
+    #     news_list = A list of news items with descriptions
 
+    # Returns:
+    #     news_results = a list of news objects
+    # ,,,
 
+    news_results = []
+    for news_item in news_list:
+        id = news_item.get('id')
+        title = news_item.get('original_title')
+        overview = news_item.get('overview')
 
-
-
+        # if news:
+        #     news_object = News(id, title,overviews)
+        #     news_results.append(news_object)
 
 
     return movie_results

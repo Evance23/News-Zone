@@ -9,7 +9,53 @@
         {% endif %}
     </head>
     <body>
-
+        <body>
+            <!-- Popular news section  -->
+            <h3> Popular News</h3>
+             <ul>
+                {% for popular_news in popular %}
+                    <li>{{ popular_news.title}}</li>
+                {% endfor %}
+            </ul>
+            <!-- Technology-->
+        <h3> Technology news </h3>
+        <ul>
+           {% for technology_news in technology %}
+               <li>{{ technology_news.title}}</li>
+           {% endfor %}
+       </ul>
+       <!-- Science-->
+       <h3>Science</h3>
+        <ul>
+           {% for science_news in science %}
+               <li>{{ science_news.title}}</li>
+           {% endfor %}
+       </ul>
+       <h3>Politics</h3>
+        <ul>
+           {% for politics_news in politics %}
+               <li>{{ politics_news .title}}</li>
+           {% endfor %}
+       </ul>
+       <h3>Sports</h3>
+        <ul>
+           {% for sports_news in sports %}
+               <li>{{ sports_news.title}}</li>
+           {% endfor %}
+       </ul>
+       <h3>Business</h3>
+        <ul>
+           {% for business_news in business %}
+               <li>{{ business_news.title}}</li>
+           {% endfor %}
+       </ul>
+       <h3>Entertainment</h3>
+        <ul>
+           {% for entertainment_news in entertainment %}
+               <li>{{ entertainment_news.title}}</li>
+           {% endfor %}
+       </ul>
+     </body>
         
     </body>
 </html>

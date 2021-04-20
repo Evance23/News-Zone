@@ -6,8 +6,8 @@ from newsapi import NewsApiClient
 # Views
 @app.route('/')
 def index():
-    newsapi = NewsApiClient( api_key= "89a6b67f299a406690de9228d689ec14")
-    topheadlines =
+    # newsapi = NewsApiClient( api_key= "89a6b67f299a406690de9228d689ec14")
+    # topheadlines =
     '''
     View root page function that returns the index page and its data and top headlines
     '''
@@ -20,6 +20,9 @@ def index():
     entertainment = get_news('entertainment')
 
     
+    # Getting popular news
+    popular_news = get_news('popular')
+    print(popular_news)
     title = "Home- Welcome to the Home of News Updates"
     return render_template('index.html', title = title, technology = technology, science = science, politics = politics, sports=sports, business = business. entertainment = entertainment')
 
