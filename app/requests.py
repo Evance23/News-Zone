@@ -26,5 +26,19 @@ def get_news(category):
             news_results_list = get_news_response['results']
             news_results = process_results(news_results_list)
 
+def process_results(movie_list):
+    # '''
+    # Function  that processes the movie result and transform them to a list of Objects
+    # ...
+    Args:
+        news_list = A list of news items with descriptions
+        
+    Returns:
+
+
+
+
+
+
 
     return movie_results
