@@ -29,7 +29,7 @@ def get_news(category):
             news_results = process_results(news_results_list)
 
 
-def process_results(movie_list):
+def process_results(news_list):
     # '''
     # Function  that processes the movie result and transform them to a list of Objects
 
@@ -50,9 +50,9 @@ def process_results(movie_list):
         #     news_object = News(id, title,overviews)
         #     news_results.append(news_object)
 
-    return movie_results
+    return news_results
 
-    def get_movie(id):
+    def get_news(id):
     get_news_details_url = base_url.format(id, api_key)
 
     with urllib.request.urlopen(get_news_details_url) as url:
@@ -68,6 +68,22 @@ def process_results(movie_list):
             # vote_average = movie_details_response.get('vote_average')
             # vote_count = movie_details_response.get('vote_count')
 
-           news_object = Movie(id,title,overview)
+           news_object = News(id,title,overview)
 
     return news_object
+
+
+def search_news(news_name):
+    search_news_url = 'https://newsapi.org/v2/everything?q=keyword&apiKey{}'.format(api_key,news_name)
+    with urllib.request.urlopen(search_news_url) as url:
+        search_news_data = url.read()
+        search_news_response = json.loads(search_news_data)
+
+        search_news_results = None
+
+        if search_news_response['results']:
+            search_news_list = search_news_response['results']
+            search_news_results = process_results(search_news_list)
+
+
+    return search_news_results
