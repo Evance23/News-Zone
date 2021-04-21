@@ -43,8 +43,9 @@ def movie(id):
 
     news = get_news(id)
     title = f'{news.title}'
+    reviews = Review.get_reviews(news.id)
 
-    return render_template('news.html', title=title, news=news)
+    return render_template('news.html', title=title, news=news reviews = reviews)
 
 
 @app.route('/search/<news_name>')
@@ -60,7 +61,7 @@ def search(news_name):
     return render_template('search.html', news=searched_news)
 
 
-app.route('/movie/review/new/<int:id>', methods=['GET', 'POST'])
+@app.route('/movie/review/new/<int:id>', methods=['GET', 'POST'])
 
 
 def new_review(id):
