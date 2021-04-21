@@ -1,6 +1,7 @@
 from flask import render_template
 from app import app
-from newsapi import NewsApiClient
+# from newsapi import NewsApiClient
+from .request import get_news,
 
 
 # Views
@@ -12,17 +13,26 @@ def index():
     View root page function that returns the index page and its data and top headlines
     '''
     # getting popular news list
-    technology = get_news ('technology')
+    technology = get_news('technology')
     science = get_newsn('science')
     politics = get_news('politics')
     sports = get_news('sports')
     business = = get_news('business')
     entertainment = get_news('entertainment')
 
-    
     # Getting popular news
     popular_news = get_news('popular')
     print(popular_news)
     title = "Home- Welcome to the Home of News Updates"
-    return render_template('index.html', title = title, technology = technology, science = science, politics = politics, sports=sports, business = business. entertainment = entertainment')
+    return render_template('index.html', title=title, technology=technology, science=science, politics=politics, sports=sports, business=business. entertainment=entertainment')
+
+
+@app route('/news/<int:id>')
+def movie(id):
+
+
+    news = get_news(id)
+    title = f'{news.title}'
+
+    return render_template('news.html', title=title, news=news)
 

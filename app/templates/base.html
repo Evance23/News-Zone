@@ -1,0 +1,24 @@
+<!-- <!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Home- Welcome to the Home of News Updates </title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- Content block -->
+<!-- 
+        {% block content %}
+
+        {% endblock%}
+    </body>
+</html>
+     -->
+{% extends 'bootstrap/base.html'%}
+<!-- Navbar block  -->
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
