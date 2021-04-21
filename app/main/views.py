@@ -18,7 +18,7 @@ def index():
     science = get_newsn('science')
     politics = get_news('politics')
     sports = get_news('sports')
-    business = = get_news('business')
+    business = get_news('business')
     entertainment = get_news('entertainment')
 
     # Getting popular news
@@ -30,18 +30,16 @@ def index():
     if search_news:
         return redirect(url_for('search', news_name=search_news))
     else:
+        return render_template('index.html', title=title, technology=technology, science=science, politics=politics, sports=sports, business=business, entertainment=entertainment)
 
-    return render_template('index.html', title=title, technology=technology, science=science, politics=politics, sports=sports, business=business. entertainment=entertainment')
-
-
-@main route('/news/<int:id>')
-def movie(id):
+@main.route('/news/<int:id>')
+def news(id):
 
     news = get_news(id)
     title = f'{news.title}'
     reviews = Review.get_reviews(news.id)
 
-    return render_template('news.html', title=title, news=news reviews=reviews)
+    return render_template('news.html', title=title, news=news, reviews=reviews)
 
 
 @main.route('/search/<news_name>')
@@ -60,7 +58,7 @@ def search(news_name):
 @main.route('/movie/review/new/<int:id>', methods=['GET', 'POST'])
 def new_review(id):
     form = ReviewForm()
-    movie = get_news(id)
+    news = get_news(id)
 
     if form.validate_on_submit():
         title = form.title.data
