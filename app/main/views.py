@@ -1,8 +1,8 @@
 from flask import render_template, request, redirect, url_for
 from . import main
-from ..requests import get_news, get_news, search_news
-from .forms import ReviewForm
-from ..models import Review
+from ..requests import get_news
+# from .forms import ReviewForm
+# from ..models import Review
 
 
 # Views
@@ -15,7 +15,7 @@ def index():
     '''
     # getting popular news list
     technology = get_news('technology')
-    science = get_newsn('science')
+    science = get_news('science')
     politics = get_news('politics')
     sports = get_news('sports')
     business = get_news('business')

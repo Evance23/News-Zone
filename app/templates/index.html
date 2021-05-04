@@ -1,83 +1,90 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Home- Welcome to the Home of News Updates </title>
-        {% endif %}
-    </head>
-    <body>
-        <body> -->
-            <!-- Styles block -->
 
 {% block styles%}
 {{ super() }}
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 <!-- <content block> -->
 
 {% block content %}
 
-<div class="container">
-    <form>
-        <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
-        <input type="submit"  value="Submit" class="btn btn-default">
-    </form>
-
+<div class="navbar navbar-light" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" style="padding-left:30%">
+                <!---entertainment, sports , tech , business, health , science, -->
+                <li><a href="#health">Health</a></li>
+                <li><a href="#business">Business</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#entertainment">Entertainment</a></li>
+                <li><a href="#technology">Technology</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
-<!-- Popular news section  -->
-<h3> Popular News</h3>
-<ul>
-    {% for popular_news in popular %}
-    <li>{{ macro.displaypopular_news.title}}</li>
 
-</ul>
-<!-- Technology-->
-<h3> Technology news </h3>
-<ul>
-    {% for technology_news in technology %}
-    <li>{{ macro.displaytechnology_news.title}}</li>
+<main class="container-fluid">
+    <div class="header text-center">
+        <h1>News Zone</h1>
+        <p>Your home of trusted news</p>
+    </div>
+    <!-- Business-->
+    <hr />
+    <div class="source_section">
+        <h3 id="business" class="source_section_name">Business News</h3>
+        <ul>
+            <div class="row">
+                {{ macro.displayNewsList(business) }}
+            </div>
+        </ul>
+    </div>
+    <!-- Sport-->
+    <hr />
+    <div class="source_section">
+        <h3 id="sport" class="source_section_name">Sports News</h3>
+        <ul>
+            <div class="row">
+                {{ macro.displayNewsList(sports) }}
+            </div>
+        </ul>
+    </div>
+    <!-- Entertainment-->
+    <hr />
+    <div class="source_section">
+        <h3 id="entertainment" class="source_section_name">Entertainment News</h3>
+        <ul>
+            <div class="row">
+                {{ macro.displayNewsList(entertainment) }}
+            </div>
+        </ul>
+    </div>
+    <!-- Technology-->
+    <hr />
+    <div class="source_section">
+        <h3 id="technology" class="source_section_name">Technology News</h3>
+        <ul>
+            <div class="row">
+                {{ macro.displayNewsList(technology) }}
+            </div>
+        </ul>
+    </div>
 
-</ul>
-<!-- Science-->
-<h3>Science</h3>
-<ul>
-    <!-- {% for science_news in science %} -->
-    {{ macro.display(Science)}}
+    <!-- health  -->
+    <hr />
+    <!-- <div class="source_section">
+        <h3 id="health" class="source_section_name">Health News</h3>
+        <ul>
+            <div class="row">
+                {{ macro.displayNewsList(health) }}
+            </div>
+        </ul>
+    </div> -->
 
-</ul>
-<h3>Politics</h3>
-<ul>
-    <!-- {% for politics_news in politics %} -->
-    {{ macro.display(Politics)}}
-
-</ul>
-<h3>Sports</h3>
-<ul>
-    <!-- {% for sports_news in sports %} -->
-    {{ macro.display(Sports)}}
-
-</ul>
-<h3>Business</h3>
-<ul>
-    <!-- {% for business_news in business %} -->
-    {{ macro.display(Business)}}
-
-</ul>
-<h3>Entertainment</h3>
-<ul>
-    <!-- {% for entertainment_news in entertainment %} -->
-    {{ macro.display(Entertainment)}}
-
-</ul>
-{ % endblock% }
-</body>
-
-</body>
-
-</html>
+</main>
+<footer>
+    <h4>Powered by News API</h4>
+</footer>
+{% endblock %}
