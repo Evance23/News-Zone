@@ -38,3 +38,7 @@ footer h4{
   position: fixed;
   background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbor.forbes.com%2Fthumbor%2F960x0%2Fhttps%253A%252F%252Fblogs-images.forbes.com%252Fkalevleetaru%252Ffiles%252F2016%252F01%252F2016-global-happiness-map-of-2015.jpg&imgrefurl=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fkalevleetaru%2F2016%2F01%2F13%2Fmapping-world-happiness-and-conflict-through-global-news-and-image-mining%2F&tbnid=0tyczrmgPkTI9M&vet=12ahUKEwj-6bLS7rPwAhVW44UKHYibCFUQMygXegUIARC6AQ..i&docid=s_pPEC16E-rDeM&w=960&h=370&q=global%20news%204%20images&ved=2ahUKEwj-6bLS7rPwAhVW44UKHYibCFUQMygXegUIARC6AQ');
 }
+
+.source-section{
+  background-color: cadetblue;
+}
