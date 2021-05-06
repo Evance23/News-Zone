@@ -32,14 +32,14 @@ def index():
     else:
         return render_template('index.html', title=title, technology=technology, science=science, politics=politics, sports=sports, business=business, entertainment=entertainment)
 
-@main.route('/news/<int:id>')
-def news(id):
+# @main.route('/news/<int:id>')
+# def news(id):
 
-    news = get_news(id)
-    title = f'{news.title}'
-    reviews = Review.get_reviews(news.id)
+#     news = get_news(id)
+#     title = f'{news.title}'
+#     reviews = Review.get_reviews(news.id)
 
-    return render_template('news.html', title=title, news=news, reviews=reviews)
+#     return render_template('news.html', title=title, news=news, reviews=reviews)
 
 
 @main.route('/search/<news_name>')
