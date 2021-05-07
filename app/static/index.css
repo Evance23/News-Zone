@@ -16,7 +16,15 @@ body{
   color: white; */
   font-size: 20px;
   font-family: 'Oswald';
+  background-color: cornflowerblue;
+  background-repeat: no-repeat;
 } 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+  
 
 footer{
 	margin-top: 100px;
@@ -41,4 +49,9 @@ footer h4{
 
 .source-section{
   background-color: cadetblue;
+}
+
+.container-fluid{
+  background-color: cornflowerblue;
+  background-repeat: no-repeat;
 }
